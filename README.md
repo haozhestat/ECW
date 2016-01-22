@@ -16,7 +16,7 @@ Topics that we plan to cover include:
 
 ### Installation of Vim 
 
-[img](https://raw.githubusercontent.com/t9md/t9md/375d45f661b76cd8fd874dbcacf93602e7d75c99/img/vim-mode-visual-blockwise.gif)
+![img](https://raw.githubusercontent.com/t9md/t9md/375d45f661b76cd8fd874dbcacf93602e7d75c99/img/vim-mode-visual-blockwise.gif)
 
 While not essential, it would be worth your while if you have already installed Vim and a terminal interface before the first meeting.
 
