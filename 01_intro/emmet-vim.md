@@ -13,7 +13,7 @@ cp autoload/emmet.vim ~/.vim/autoload/
 cp -a autoload/emmet ~/.vim/autoload/
 ```
 
-** OR ** Using [vundle](https://github.com/gmarik/vundle)
+**OR** use [vundle](https://github.com/gmarik/vundle)
 - Add this line to .vimrc ```Plugin 'mattn/emmet-vim'```
 
 ## Tutorials
