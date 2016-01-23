@@ -13,10 +13,9 @@ Topics that we plan to cover include:
 
 -  Creating Vim packages
 
+![img](https://raw.githubusercontent.com/t9md/t9md/375d45f661b76cd8fd874dbcacf93602e7d75c99/img/vim-mode-visual-blockwise.gif)
 
 ### Installation of Vim 
-
-![img](https://raw.githubusercontent.com/t9md/t9md/375d45f661b76cd8fd874dbcacf93602e7d75c99/img/vim-mode-visual-blockwise.gif)
 
 While not essential, it would be worth your while if you have already installed Vim and a terminal interface before the first meeting.
 
@@ -36,6 +35,6 @@ Vim also comes installed on most Unix systems. However, you may not have the mos
 
 ### Command line tutorials
 
--  A crash course that covers the basics of terminal navigation and use (link)[http://cli.learncodethehardway.org/book/]
+-  A crash course that covers the basics of terminal navigation and use [http://cli.learncodethehardway.org/book/](http://cli.learncodethehardway.org/book/)
 
--  Code academy command line course (link)[https://www.codecademy.com/learn/learn-the-command-line]
+-  Code academy command line course [https://www.codecademy.com/learn/learn-the-command-line](http://cli.learncodethehardway.org/book/)
