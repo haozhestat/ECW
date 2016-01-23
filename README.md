@@ -21,20 +21,20 @@ While not essential, it would be worth your while if you have already installed 
 
 -  Windows
 
-The most popular way to get up and running with Vim is probably to use the self-installing executable available at vim.org (link)[http://www.vim.org/download.php].
-Another possibility better choice may be to install Cygwin a tool that provides a linux like environment on Windows (here)[https://www.cygwin.com/] and choose the Vim options.
+The most popular way to get up and running with Vim is probably to use the self-installing executable available at vim.org [http://www.vim.org/download.php](http://www.vim.org/download.php).
+Another possibility better choice may be to install Cygwin a tool that provides a linux like environment on Windows [https://www.cygwin.com/](https://www.cygwin.com/) and choose the Vim options.
 
 -  Linux
 
 Standard linux distrubutions should already have Vim installed.
-If you would like to update to the latest version, you can do that by following the instructions at vim.org (link)[http://www.vim.org/download.php].
+If you would like to update to the latest version, you can do that by following the instructions at vim.org [http://www.vim.org/download.php](http://www.vim.org/download.php).
 
 -  Mac/Unix
 
-Vim also comes installed on most Unix systems. However, you may not have the most up-to-date version, which can again be installed at vim.org (link)[http://www.vim.org/download.php].
+Vim also comes installed on most Unix systems. However, you may not have the most up-to-date version, which can again be installed at vim.org [http://www.vim.org/download.php](http://www.vim.org/download.php).
 
 ### Command line tutorials
 
 -  A crash course that covers the basics of terminal navigation and use [http://cli.learncodethehardway.org/book/](http://cli.learncodethehardway.org/book/)
 
--  Code academy command line course [https://www.codecademy.com/learn/learn-the-command-line](http://cli.learncodethehardway.org/book/)
+-  Code academy command line course [https://www.codecademy.com/learn/learn-the-command-line](https://www.codecademy.com/learn/learn-the-command-line)
