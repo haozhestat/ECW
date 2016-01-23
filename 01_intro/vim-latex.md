@@ -1,4 +1,4 @@
-
+![img](../images/vim-latex1.JPG)
 
 ## Installation
 
