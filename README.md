@@ -31,7 +31,7 @@ If you would like to update to the latest version, you can do that by following 
 
 -  Mac/Unix
 
-Vim also comes installed on most Unix systems. However, you may not have the most up-to-date version, which can again be installed at vim.org [http://www.vim.org/download.php](http://www.vim.org/download.php).
+Vim also comes installed on most Unix systems. However, you may not have the most up-to-date version, which can again be installed at vim.org [http://www.vim.org/download.php](http://www.vim.org/download.php). On Mac, we recommend using homebrew to install a fresh version of Vim instead of messing with the system-wide default version.
 
 ### Command line tutorials
 
