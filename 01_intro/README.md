@@ -70,7 +70,7 @@ the file level - you can ask Vim to behave a certain way depending on the type
 of file that you are editing. Below is an example of a ```.vimrc``` file that we 
 took from Vim's website. This file goes in your home directory ```~/.vimrc```.
 You also see examples of more advanced vimrc's by checking out either 
-[mine](https://github.com/epwalsh/Code/backup_osx_admin/.vimrc) or 
+[mine](https://github.com/epwalsh/Code/blob/master/backup_osx_admin/.vimrc) or 
 [Ians](https://github.com/imouzon/dotfiles/blob/master/.vimrc.bak).
 
 ```
