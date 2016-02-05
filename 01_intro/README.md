@@ -62,6 +62,21 @@ to start editing files. Here is how you get started:
 - Type ```vim```
 - Type ```:help tutor```, and you'll be on your way!
 
+Below are some basic concepts that you will learn about in the tutorial.
+
+##### Vim modes
+
+There are essentially 4 mutually exclusive modes that you could be in at any given time in Vim. 
+
+| Mode        | Description                                                                | Help page               |
+| ----------- |:--------------------------------------------------------------------------:| -----------------------:|
+| Normal      | Move around, delete/paste characters/words/lines                           | :help Normal-mode       |
+| Visual      | Select arbitrary text and then cut/copy selection or perform regex replace | :help Visual-mode       |
+| Insert      | For adding text                                                            | :help Insert-mode       |
+| Command     | Enter editor commands or send commands to the terminal                     | :help Command-line-mode |
+
+Pressing <esc> will always get you back to Normal-mode. You should get in a habit of always jumping back to normal mode after typing in Insert-mode.
+
 ### Setting up your vimrc
 
 Your ```.vimrc``` file is how you customize your editor. It tells Vim which 
