@@ -1,6 +1,6 @@
 ![img](../images/vim-latex1.JPG)
 
-> "Vim is undoubtedly one of the best editors ever made. LaTeX is an extremely powerful, intelligent typesetter. Vim-LaTeX aims at bringing together the best of both these worlds."
+> Vim is undoubtedly one of the best editors ever made. LaTeX is an extremely powerful, intelligent typesetter. Vim-LaTeX aims at bringing together the best of both these worlds.
 
 ## Installation
 

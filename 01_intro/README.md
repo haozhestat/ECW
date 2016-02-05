@@ -20,13 +20,13 @@ People have written a huge variety of plugins (extensions) for Vim that make it
 way more than just an efficient typing machine. For example:
 
 - vim-latex is a great plugin for LaTeX that allows you to quickly create new enviroments 
-and jump outside of an environment when you are finished type in it.
+and jump outside of an environment when you are finished typing in it.
 - vim-R-plugin is extension that allows to send code as you write it to an 
 R session in another arbitrary terminal window. It also has support for doing 
 the same with Python. This is what an interactive session looks like with 
 vim-R:
 ![../images/vim-R-plugin1.png](../images/vim-R-plugin1.png)
-- emmet-vim is extension that allows to write HTML code with amazing efficient.
+- emmet-vim is extension that allows to write HTML code with amazing efficiency.
 You can create arbitrary nested elements using a special syntax and key 
 combination, and then jump around between text input spaces. 
 - nerdcommenter gives you shortcuts to beautifully comment lines or blocks of 
@@ -35,14 +35,15 @@ code in just about any language.
 refreshes pages in a browser as you edit them in Vim.
 
 The other appeal of Vim is that it is highly customizable. If you look at my 
-Vim setup (Evan) versus Ian's, they look like a completely different text 
+Vim setup versus Ian's, they look like a completely different text 
 editor. Not only is the visual appearance of our editors completely different,
 but both of us have customized our shortcuts and key combinations to suit our 
 own needs. As you will find out, you become very invested in your personal 
 Vim setup. The relationship you will have with your Vim editor will be like any 
 relationship - it takes work, and sometimes you may get frustrated, but if you stick
 with it you will love your partner (Vim) and may even experience separation
-anxiety when you are forced to be apart for too long.
+anxiety when you are forced to be apart for too long, i.e. forced to use clunky, 
+less costomizable IDE's like RStudio.
 
 ### Installing
 

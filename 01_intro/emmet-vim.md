@@ -1,6 +1,6 @@
 ![img](http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2013/12/featured.gif)
 
-> "emmet-vim is a vim plug-in which provides support for expanding abbreviations."
+> emmet-vim is a vim plug-in which provides support for expanding abbreviations.
 
 ## Installation
 
