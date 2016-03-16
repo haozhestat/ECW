@@ -1,0 +1,228 @@
+---
+title: "Basic Data Types and More Complex Objects"
+author: Effecient Computing Workflow Group
+data: March 7th, 2016
+output: html_document
+---
+
+<!--- # (R code (No Results in Document)) -->
+```{r set-parent, echo=FALSE,warning=FALSE,error=FALSE,message=FALSE,cache=TRUE,warning=FALSE,include=FALSE,comment=NA}
+   #set working directory
+   working.dir = "/Users/user/proj/ECW/ecw_filetype/type_system"
+   setwd(working.dir)
+
+   #compile the document to PDF
+   if(FALSE) 
+      rmarkdown::render("/Users/user/proj/ECW/ecw_filetype/type_system/type_system.Rmd")
+```
+
+### ECW Format
+
+**Passing Format**
+
+I suggest that wherever we store the actual content of the objects we intend to pass, we store a `.fmt` or `.ecwfmt` file along with the object. 
+So if we have a dataset `d` which we wish to export, we should create a file `d.txt` containing only the content of `d` and a second file `d.fmt` that identifies the format matter (perhaps the size, the languages that can read it, the languages that can write to it, the language that created it, which chunk created it, and so on).
+If we store the object and format information in the same file, we may run into more problems if we attempt to change the way objects are stored in R.
+
+**Avoiding Issues and Complications**
+
+Many higher level languages know a rich set of possible classifications.
+R, for example, attaches a class attribute to many objects - a class attribute that determines, for example, methods that can be performed on the object.
+Since classes, methods, and structures can be defined by the user, there will obviously not be obvious ways to transfer on object from one language to another.
+
+For this reason, I think it is worthwhile to start with the lower level languages, and identify what the basic data types are in those languages.
+If we can reduce a more complex object to a certain set of basic objects, then we can easily move between more advanced languages as well.
+
+**Format File Values**
+
+At this moment I think that we need the following identifications for our formats:
+
+```
+format:
+subformat:
+description:
+array dimensions:
+length:
+```
+
+-  `format`: the name of the format, mirroring the lower level languages when possible
+-  `subformat`: any special considerations on the format (for instance, the number of bytes was set outside of the default).
+-  `description`: a brief description of the format :: a brief description of the subformat
+-  `array dimensions`: 1 is single value; 10 is a vector of length 10; 10, 4 is a matrix with 10 rows and 4 columns; 10, 3, 2 is a multidemensional array with entries (1, 1, 1) first, (1, 1, 2) second, (1, 2, 1) first, and so on.
+-  `length`: the number of characters in each entry; 10 if a single entry has 10 characters; 10, 4, 10 if an array of length 3 has entries of length 10, 4, and 3. Using YAML style indentations, we could have:
+```
+array dimensions: 2, 5
+length:
+   - 3, 2, 10, 15, 19
+   - 2, 3, 5, 19, 200
+```
+for a 2 by 5 matrix and for a (3, 2, 5)-multidemensional array something like
+```
+array dimensions: 3, 2, 5
+length:
+   - 
+     - 3, 2, 10, 15, 19  [1, 1, 1:5]
+     - 3, 2, 10, 15, 19  [1, 2, 1:5]
+   - 
+     - 3, 2, 10, 15, 19  [2, 1, 1:5]
+     - 3, 2, 10, 15, 19  [2, 2, 1:5]
+   - 
+     - 3, 2, 10, 15, 19  [3, 1, 1:5]
+     - 3, 2, 10, 15, 19  [3, 2, 1:5]
+```
+
+### FORTRAN
+
+(*aka* FORTRAN 77, Fortran 77)
+
+I am following the [ANSI Standard Definition](https://www.fortran.com/F77_std/f77_std.html) and considering 
+University of Strathclyde Computer Centre's guide
+[Fortran 77 for beginners](http://www.idris.fr/data/cours/lang/fortran/F77.html)
+as a guide for how to proceed with defining the ECW Format classes.
+
+FORTRAN has 6 data types:
+
+1. Integer
+2. Real
+3. Double Precision
+4. Complex
+5. Logical
+6. Character
+
+**Integer**
+
+Variables can be typed explicitly as integers using `integer`, which specifies the standard integer type for the machine in which the compiler operates (usually a 4-byte/32-bit integer).
+It is possible to use `integer*2` to specify a "short integer" (2-byte/8-bit between -32768 and 32767) or `integer*4` to specify a long integer (4-byte/32-bit, between -2147483648 and 2147483647, which appears to be the default in most computers).
+
+This suggests possible types `integer`, with `integer4` and `integer2` for when the lengths are specified.
+The format file for an integer could look like this:
+
+```
+format: integer
+subformat: integer
+description:
+array dimensions: 1
+length: <number of characters in value>
+```
+for unspecified integers and
+```
+format: integer
+subformat: integer4
+description: long integer
+array dimensions: 1
+length: <number of characters in value>
+```
+or 
+```
+format: integer
+subformat: integer2
+description: short integer
+array dimensions: 1
+length: <number of characters in value>
+```
+when the length is specified by the program of origin. 
+
+Storing an array of 5 integers may look something like this:
+```
+format: integer
+subformat: integer2
+description: short integer
+array dimensions: 5
+length: 10, 2, 5, 3, 5
+```
+
+
+**Real and Double Precision**
+
+FORTRAN offers two types of floating point variables, `real` (4-byte/32-bit with 6-7 decimals of precision) and `double precision` (8-byte/64-bit with 15-16 decimals of precision).
+This suggests the following format structure:
+
+```
+format: real
+subformat: real4
+description: real floating point
+array dimensions: 1
+length: <number of characters in value>
+```
+and
+```
+format: double precision
+subformat: double precision8
+description: double precision floating point
+array dimensions: 1
+length: <number of characters in value>
+```
+
+**Complex**
+
+A pair of `real` values, \(a\) and \(b\) representing \(a + b i\). Essentially, two 4-byte/32-bit values.
+This suggests a format structure:
+```
+format: complex
+subformat: complex4
+description: complex floating point
+array dimensions: 1
+length: <number of characters in value>
+```
+
+**Logical**
+
+One of two possible values: `.TRUE.` or `.FALSE.`.
+
+I suggest writing `TRUE` and `FALSE` if the result of a FORTRAN submodule is `.TRUE.` or `.FALSE.`.
+I don't think we should save `TRUE` as 1 or `FALSE` as 0 for the time being.
+
+```
+format: logical
+subformat: 
+description: a TRUE or FALSE value
+array dimensions: 1
+length: <number of characters in value>
+```
+
+**Character**
+
+FORTRAN character variables must have known length, in terms of the number of characters in the value, prior to being created. Blank spaces are acceptable.
+Thus if we store a single character string to be treated as a single value, we should describe the format using something like:
+```
+format: character
+subformat:
+description: each line of the file represents a single character string
+array dimensions: 1
+length: <number of characters in value>
+```
+
+# Classes
+
+>  Many R objects have a class attribute...
+
+While the line above is directly taken from the documentation for the function `class`, similar phrases can be found in many blog posts, wiki entries, and documentation files attempting to describe the way R classifies objects.
+The description is 
+The problem 
+Knowing the class of a given R object is fine for staying within the coin almost every case 
+This is fine for understanding what R is doing
+
+
+# Basic Data Types
+
+
+The above quote comes from the 
+I have found the following functions useful in exploring R data types: 
+
+-  `class`: which 
+
+R has the following basic data types.
+
+-  Logical
+
+<!--- : R code (No Results in Document) -->
+```{r cache=FALSE}
+
+TRUE
+
+class(TRUE)
+typeof(TRUE)
+
+   
+```
+
